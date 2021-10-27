@@ -1,7 +1,7 @@
 # MaristiceFileParser
 Parser for the Dat(a) files of Maristice
 
-![Maristice Logo](https://en.touhouwiki.net/images/e/e5/Maristice_face.jpg)
+![Maristice Logo](maristice_face.jpg)
 
 Maristice is a clone of the old game Solistice featuring various Characters from the Touhou franchise. 
 It was developed and released by @N-Factory in 2008.
