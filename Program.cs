@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace MaristiceFileParser
 {
@@ -22,6 +23,11 @@ namespace MaristiceFileParser
 				System.Environment.Exit(1);
 			}
 
+			// Register Shift-JIS Encoding
+			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+			Encoding encoding = Encoding.GetEncoding("Shift-JIS");
+			Console.OutputEncoding = encoding;
+
 			byte[] bytes = System.IO.File.ReadAllBytes(args[0]);
 			byte[] countBytes = bytes[0..4];
 			int count = BitConverter.ToInt32(countBytes);
@@ -32,7 +38,7 @@ namespace MaristiceFileParser
 			for (int i = 4; i < count * 260; i += 260)
 			{
 				FileInfo fi = new FileInfo();
-				fi.name = System.Text.Encoding.Default.GetString(bytes[i..(i + 256)]);
+				fi.name = encoding.GetString(bytes[i..(i + 256)]);
 				fi.size = BitConverter.ToInt32(bytes[(i + 256)..(i + 260)], 0);
 				fileInfos.Add(fi);
 			}
