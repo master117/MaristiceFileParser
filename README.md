@@ -3,7 +3,7 @@ Parser for the Dat(a) files of Maristice
 
 ![Maristice Logo](maristice_face.jpg)
 
-Maristice is a clone of the old game Solistice featuring various Characters from the Touhou franchise. 
+Maristice is a clone of the old game Solistice featuring various characters from the Touhou franchise. 
 It was developed and released by @N-Factory in 2008.
 
 http://atn-factory.jp/maristice/
